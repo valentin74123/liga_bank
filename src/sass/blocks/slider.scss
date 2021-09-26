@@ -1,0 +1,45 @@
+.slider {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+  z-index: 0;
+
+  @media (max-width: $tablet-width) {
+    height: 300px;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: $mobile-width) {
+    height: 226px;
+  }
+
+  .swiper-pagination-bullets {
+    bottom: 32px;
+
+    @media (max-width: $tablet-width) {
+      bottom: 10px;
+    }
+
+    @media (max-width: $mobile-width) {
+      bottom: 5px;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    background-color: $blue2;
+    opacity: 1;
+
+    &-active {
+      background-color: $light-white1;
+    }
+
+    @media (max-width: $mobile-width) {
+      width: 6px;
+      height: 6px;
+      margin: 0 3px;
+    }
+  }
+}

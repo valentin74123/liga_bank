@@ -1,0 +1,205 @@
+.slide {
+  background-position: center bottom;
+  background-size: 1366px 400px, 100%;
+  background-repeat: no-repeat;
+
+  &--dark {
+    .slide__title {
+      color: $light-white1;
+    }
+
+    .slide__text {
+      color: $light-white3;
+    }
+
+    .slide__button {
+      padding: 15px 36px 16px;
+      color: $dark;
+      background-color: $light-white1;
+    }
+  }
+
+  &--light {
+    .slide__title {
+      color: $dark;
+    }
+
+    .slide__text {
+      color: $dark-gray2;
+    }
+
+    .slide__button {
+      padding: 15px 48px 16px;
+      color: $light-white1;
+      background-color: $blue1;
+    }
+  }
+
+  &--1 {
+    background-color: $blue1;
+    background-image: url("../img/cards.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/cards@2x.jpg");
+    }
+  }
+
+  &--2 {
+    background-image: url("../img/slide-2.jpg"), $gradient;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/slide-2@2x.jpg"), $gradient;
+    }
+  }
+
+  &--3 {
+    background-color: $light-white5;
+    background-image: url("../img/slide-3.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/slide-3@2x.jpg");
+    }
+  }
+}
+
+.slide__wrapper {
+  @include container();
+
+  padding: 103px 268px;
+}
+
+.slide__title {
+  max-width: 70%;
+  margin: 0;
+  margin-bottom: 6px;
+
+  font-size: 18px * 3;
+  line-height: normal;
+  font-weight: bold;
+}
+
+.slide__text {
+  max-width: 50%;
+  margin: 0;
+  margin-bottom: 33px;
+
+  font-size: 22px;
+  line-height: normal;
+  font-weight: normal;
+  color: $light-white3;
+}
+
+.slide__button {
+  width: max-content;
+
+  font-size: 18px;
+  line-height: normal;
+  font-weight: 500;
+}
+
+@media (max-width: $tablet-width) {
+  .slide {
+    background-size: 768px 300px, 100%;
+
+    &--1 {
+      background-position: 50% bottom;
+      background-image: url("../img/cards-tablet.jpg");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/cards-tablet@2x.jpg");
+      }
+
+      .slide__button {
+        padding: 18px 31px;
+      }
+    }
+
+    &--2 {
+      background-image: url("../img/slide-2-tablet.jpg"),
+        $gradient;
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/slide-2-tablet@2x.jpg"),
+          $gradient;
+      }
+    }
+
+    &--3 {
+      background-image: url("../img/slide-3-tablet.jpg");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/slide-3-tablet@2x.jpg");
+      }
+
+      .slide__button {
+        padding: 18px 31px;
+      }
+    }
+  }
+
+  .slide__wrapper {
+    padding: 65px 11.2%;
+  }
+
+  .slide__title {
+    margin-bottom: 4px;
+    font-size: 46px;
+  }
+
+  .slide__text {
+    margin-bottom: 29px;
+    font-size: 18px;
+  }
+
+  .slide__button {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .slide {
+    background-size: 578px 226px, 100%;
+    background-position: calc(50% + 50px);
+
+    &--1 {
+      background-position: calc(50% + 105px) bottom;
+
+      .slide__text {
+        max-width: 70%;
+      }
+
+      .slide__button {
+        padding: 13px 31px;
+      }
+    }
+
+    &--2 {
+      background-position: calc(50% - 40px) bottom, center center;
+    }
+
+    &--3 {
+      background-position: calc(50% - 60px) bottom;
+
+      .slide__button {
+        padding: 13px 37px;
+      }
+    }
+  }
+
+  .slide__wrapper {
+    padding: 40px 4.7% 48px;
+  }
+
+  .slide__title {
+    font-size: 38px;
+  }
+
+  .slide__text {
+    margin-bottom: 26px;
+    font-size: 16px;
+  }
+
+  .slide__button {
+    font-size: 14px;
+  }
+}

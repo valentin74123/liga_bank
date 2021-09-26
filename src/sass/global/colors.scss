@@ -2,17 +2,22 @@ $white: #ffffff;
 $light-white1: #f6f7ff;
 $light-white2: #f3f7ff;
 $light-white3: #e0e1ea;
+$light-white4: #e0e0e0;
+$light-white5: #e6f1fe;
 
 $light-gray1: #c1c2ca;
 $light-gray2: #c4c4c4;
+$light-gray3: #dde2ec;
 $gray: #707c87;
 
 $dark-gray1: #394959;
 $dark-gray2: #2b3c4f;
+$dark-gray3: #4c4b51;
 $dark: #1f1e25;
 $black: #0a1e32;
 
 $light-blue: #565ef5;
 $blue1: #2c36f2;
 $blue2: #2028b6;
-$blue3: #2028b6;
+
+$gradient: linear-gradient(to right, $light-gray3 0 50%, $light-white2 50% 100%);

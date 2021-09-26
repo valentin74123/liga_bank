@@ -1,0 +1,16 @@
+.tabs-section {
+  margin-bottom: 96px;
+}
+
+.tabs-section__container {
+  width: calc(100% - 40px);
+  max-width: $desktop-width;
+  margin: 0 auto;
+}
+
+@media (max-width: $tablet-width) {
+  .tabs-section__container {
+    width: 100%;
+    margin: 0;
+  }
+}

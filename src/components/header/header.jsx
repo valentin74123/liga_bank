@@ -1,54 +1,100 @@
-import React from "react";
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
+import {useSelector} from 'react-redux';
+import {getClassName} from '../../utils';
+import {ESC_KEY, HEADER_LINKS, Viewport} from '../../const';
+import {getViewport} from '../../store/page/selectors';
 import Logo from '../logo/logo';
 
-const Header = () => {
+const Header = (props) => {
+  const {currentPage} = props;
+
+  const viewportType = useSelector(getViewport);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const isMobile = viewportType === Viewport.MOBILE;
+
+  const closeMenu = useCallback(() => {
+    setIsMenuOpen(false);
+    document.body.classList.remove(`page--lock`);
+  }, [setIsMenuOpen]);
+
+  const openMenu = useCallback(() => {
+    if (!isMenuOpen) {
+      setIsMenuOpen(true);
+      document.body.classList.add(`page--lock`);
+    }
+  }, [isMenuOpen, setIsMenuOpen]);
+
+  const handleEscKeyDown = useCallback((evt) => {
+    if (evt.key === ESC_KEY) {
+      closeMenu();
+    }
+  }, [closeMenu]);
+
+  useEffect(() => (
+    isMenuOpen
+      ? document.addEventListener(`keydown`, handleEscKeyDown)
+      : document.removeEventListener(`keydown`, handleEscKeyDown)
+  ), [handleEscKeyDown, isMenuOpen]);
+
+  useEffect(() => {
+    if (isMenuOpen && !isMobile) {
+      setIsMenuOpen(false);
+      document.body.classList.remove(`page--lock`);
+    }
+  }, [isMenuOpen, isMobile]);
+
+  const headerClassName = useMemo(() => getClassName(`header`, isMenuOpen ? `header--open` : `header--close`), [isMenuOpen]);
+
+
   return (
-    <header className="header header--closed">
+    <header className={headerClassName}>
       <div className="header__wrapper">
-        <button className="navigation__toggle" type="button">
-          <span className="visually-hidden">Открыть меню</span>
+        <Logo className="header__logo" isMobile={isMobile} />
+        <button onClick={openMenu} className="header__button header__button--open" isabled={isMenuOpen}>
+          Открыть меню
         </button>
 
-        <Logo />
+        <button onClick={closeMenu} className="header__button header__button--close">
+          Закрыть меню
+        </button>
 
-        <nav className="header__navigation navigation">
-          <ul className="navigation__list list">
-            <li className="navigation__item">
-              <a className="navigation__item-link link" href="#">Услуги</a>
-            </li>
+        <div className="header__container">
+          <nav className="header__nav navigation">
+            <ul className="navigation__list list">
+              {HEADER_LINKS.map(({link, title}) => (
+                <li key={link} className="navigation__item">
+                  {(currentPage.title === title)
+                    ? <span className="navigation__link navigation__link--current">{title}</span>
+                    : <Link to={link} className="navigation__link">{title}</Link>}
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-            <li className="navigation__item">
-              <a className="navigation__item-link navigation__item-link--active link" href="#">Рассчитать кредит</a>
-            </li>
-
-            <li className="navigation__item">
-              <a className="navigation__item-link link" href="#">Конвертер валют</a>
-            </li>
-
-            <li className="navigation__item">
-              <a className="navigation__item-link link" href="#">Контакты</a>
-            </li>
-          </ul>
-        </nav>
-
-        <div className="header__login">
-          <a className="header__login-link link" href="#">
-            <svg width="20" height="22" viewBox="0 0 20 22" fill="none">
-              <path d="M2.22222 14.3H4.44444V19.8H17.7778V2.2H4.44444V7.7H2.22222V1.1C2.22222
-              0.808262 2.33929 0.528472 2.54766 0.322183C2.75603 0.115892 3.03865
-              0 3.33333 0H18.8889C19.1836 0 19.4662 0.115892 19.6746 0.322183C19.8829
-              0.528472 20 0.808262 20 1.1V20.9C20 21.1917 19.8829 21.4715 19.6746
-              21.6778C19.4662 21.8841 19.1836 22 18.8889 22H3.33333C3.03865
-              22 2.75603 21.8841 2.54766 21.6778C2.33929 21.4715 2.22222
-              21.1917 2.22222 20.9V14.3ZM8.88889 9.9V6.6L14.4444 11L8.88889
-              15.4V12.1H0V9.9H8.88889Z" fill="#1F1E25"/>
-            </svg>
-            <span>Войти в Интернет-банк</span>
-          </a>
+          <div className="header__user-nav user-nav">
+            <div className="user-nav__wrapper">
+              <button className="user-nav__link" type="button" aria-label="Войти в Интернет-банк">
+                <svg className="user-nav__icon" width="20" height="22">
+                  <use xlinkHref="#login"></use>
+                </svg>
+                <span className="user-nav__label">Войти в Интернет-банк</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  currentPage: PropTypes.shape({
+    link: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Header;

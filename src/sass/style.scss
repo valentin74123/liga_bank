@@ -1,9 +1,24 @@
 @import "global/colors.scss";
 @import "global/viewports.scss";
-@import "global/global.scss";
 @import "global/fonts.scss";
 @import "global/mixins.scss";
+@import "global/global.scss";
+//
+@import "blocks/button.scss";
+//
 @import "blocks/header.scss";
 @import "blocks/logo.scss";
 @import "blocks/navigation.scss";
+@import "blocks/user-nav.scss";
+//
+@import "swiper/swiper.scss";
+@import "swiper/components/pagination/pagination.scss";
+@import "blocks/slider.scss";
+@import "blocks/slide.scss";
+//
+@import "blocks/tabs-section.scss";
+@import "blocks/tabs.scss";
+@import "blocks/tabs-content.scss";
+@import "blocks/tabs-slider.scss";
+//
 @import "blocks/footer.scss";
