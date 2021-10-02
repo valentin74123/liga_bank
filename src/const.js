@@ -39,9 +39,16 @@ const Navigation = {
     link: AppRoute.SERVICES,
     title: `Услуги`,
   },
+
+  QUESTION: {
+    link: AppRoute.QUESTION,
+    title: `Задать вопрос`,
+  },
 };
 
 const HEADER_LINKS = [Navigation.SERVICES, Navigation.CREDIT, Navigation.CURRENCY, Navigation.CONTACTS];
+
+const FOOTER_LINKS = [Navigation.SERVICES, Navigation.CREDIT, Navigation.CONTACTS, Navigation.QUESTION];
 
 const TabType = {
   DEPOSIT: `deposit`,
@@ -168,6 +175,14 @@ const CreditData = {
   },
 };
 
+const PINS = [
+  {id: `Moscow`, coords: [55.755819, 37.617644]},
+  {id: `Saratov`, coords: [51.533562, 46.034266]},
+  {id: `Kazan`, coords: [55.796127, 49.106414]},
+  {id: `Tumen`, coords: [57.152985, 65.541227]},
+  {id: `Omsk`, coords: [54.989347, 73.368221]},
+];
+
 export {
   AppRoute,
   AUTO_TOTAL_PRICE_FOR_DISCOUNT,
@@ -185,5 +200,7 @@ export {
   StorageField,
   TabType,
   TabTypeToData,
-  Viewport
+  Viewport,
+  PINS,
+  FOOTER_LINKS
 };

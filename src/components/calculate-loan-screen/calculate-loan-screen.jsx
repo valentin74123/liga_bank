@@ -9,6 +9,7 @@ import Header from "../header/header";
 import Slider from "../slider/slider";
 import TabsSection from "../tabs-section/tabs-section";
 import CreditCalculator from "../credit-calculator/credit-calculator";
+import MapSection from "../map-section/map-section";
 import Footer from "../footer/footer";
 
 const CalculateLoanScreen = () => {
@@ -40,6 +41,8 @@ const CalculateLoanScreen = () => {
         <TabsSection />
 
         <CreditCalculator />
+
+        <MapSection />
       </main>
 
       <Footer />
