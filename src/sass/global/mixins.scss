@@ -59,3 +59,20 @@
     font-size: 14px;
   }
 }
+
+@mixin field() {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 2px 24px 0;
+
+  font-weight: 500;
+
+  border: 1px solid $dark;
+  border-radius: 4px;
+
+  @media (max-width: $mobile-width) {
+    padding: 0 15px;
+  }
+}

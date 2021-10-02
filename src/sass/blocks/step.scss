@@ -1,0 +1,34 @@
+.step {
+  width: 100%;
+}
+
+.step__title {
+  margin: 0;
+  margin-bottom: 16px;
+
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.step__form {
+  width: 100%;
+}
+
+@media (max-width: $tablet-width) {
+  .step {
+    width: 100%;
+  }
+
+  .step__title {
+    margin-bottom: 13px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .step__title {
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+}

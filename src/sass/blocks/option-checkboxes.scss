@@ -1,0 +1,39 @@
+.option-checkboxes {
+  font-size: 16px;
+  line-height: 1.4;
+  color: $dark;
+}
+
+.option-checkboxes__label {
+  display: flex;
+}
+
+.option-checkboxes__box {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  margin-top: 2px;
+  flex-shrink: 0;
+
+  border: 1px solid $blue1;
+  background-color: transparent;
+  border-radius: 2px;
+}
+
+input:focus + .option-checkboxes__label .option-checkboxes__box {
+  box-shadow: 0 0 0 2px $dark-black;
+}
+
+input:checked + .option-checkboxes__label .option-checkboxes__box {
+  background-color: $blue1;
+  background-image: url("../img/tick.svg");
+  background-repeat: no-repeat;
+  background-size: 8px 6px;
+  background-position: center;
+}
+
+@media (max-width: $mobile-width) {
+  .option-checkboxes {
+    font-size: 14px;
+  }
+}

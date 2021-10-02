@@ -1,0 +1,106 @@
+.credit-price-field {
+  margin-bottom: 20px;
+
+  input {
+    width: 45%;
+    padding-right: 5px;
+    font: inherit;
+    line-height: inherit;
+    text-align: right;
+
+    border: none;
+    background-color: transparent;
+  }
+}
+
+.credit-price-field--invalid {
+  .credit-price-field__wrapper {
+    border-color: $red;
+  }
+
+  .credit-price-field__error {
+    display: inline;
+  }
+}
+
+.credit-price-field__label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: $dark-gray1;
+}
+
+.credit-price-field__wrapper {
+  @include field();
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.credit-price-field__button {
+  display: flex;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &--minus {
+    margin-right: auto;
+  }
+
+  &--plus {
+    margin-left: auto;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+}
+
+.credit-price-field__icon {
+  width: 16px;
+  height: auto;
+}
+
+.credit-price-field__units {
+  width: 43%;
+}
+
+.credit-price-field__error {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 80px);
+
+  font-size: 14px;
+  line-height: 1.4;
+  color: $red;
+}
+
+.credit-price-field__info {
+  display: block;
+  font-size: 14px;
+  line-height: 1.4;
+  color: $gray;
+}
+
+@media (max-width: $tablet-width) {
+  .credit-price-field {
+    margin-bottom: 15px;
+  }
+
+  .credit-price-field__wrapper {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .credit-price-field {
+    margin-bottom: 10px;
+  }
+}

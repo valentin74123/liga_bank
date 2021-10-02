@@ -1,0 +1,37 @@
+.range {
+  width: calc(100% - 14px);
+  margin: 15px auto;
+  padding-bottom: 20px;
+}
+
+.range--initial-payment {
+  .input-range__label--min,
+  .input-range__label--max {
+    display: none;
+  }
+
+  .input-range__label--value {
+    top: 0.6rem;
+  }
+}
+
+.range--period {
+  .input-range__label--value {
+    display: none;
+  }
+}
+
+.range__legend {
+  position: relative;
+  font-size: 14px;
+  line-height: 1.4;
+  color: $gray;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: $mobile-width) {
+  .range {
+    margin: 15px auto 11px;
+  }
+}

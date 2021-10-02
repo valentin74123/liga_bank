@@ -1,4 +1,9 @@
 const ESC_KEY = `Escape`;
+const AUTO_TOTAL_PRICE_FOR_DISCOUNT = 2000000;
+const HOME_FIRST_PAYMENT_RATE_FOR_DISCOUNT = 15;
+const INCOME_RATE = 0.45;
+
+const MAT_CAPITAL = 470000;
 
 const AppRoute = {
   ROOT: `/`,
@@ -13,6 +18,30 @@ const Breakpoint = {
   DESKTOP: 1024,
   TABLET: 768,
 };
+
+const Navigation = {
+  CONTACTS: {
+    link: AppRoute.CONTACTS,
+    title: `Контакты`,
+  },
+
+  CREDIT: {
+    link: AppRoute.ROOT,
+    title: `Рассчитать кредит`,
+  },
+
+  CURRENCY: {
+    link: AppRoute.CURRENCY,
+    title: `Конвертер валют`,
+  },
+
+  SERVICES: {
+    link: AppRoute.SERVICES,
+    title: `Услуги`,
+  },
+};
+
+const HEADER_LINKS = [Navigation.SERVICES, Navigation.CREDIT, Navigation.CURRENCY, Navigation.CONTACTS];
 
 const TabType = {
   DEPOSIT: `deposit`,
@@ -46,28 +75,115 @@ const Viewport = {
   MOBILE: `mobile`,
 };
 
-const Navigation = {
-  CONTACTS: {
-    link: AppRoute.CONTACTS,
-    title: `Контакты`,
-  },
+const CreditType = {
+  HOME: `home`,
+  AUTO: `auto`,
+};
 
-  CREDIT: {
-    link: AppRoute.ROOT,
-    title: `Рассчитать кредит`,
-  },
+const OptionType = {
+  CASCO: `casco`,
+  LIFE_INSURANCE: `life-insurance`,
+  MAT_CAPITAL: `mat-capital`,
+};
 
-  CURRENCY: {
-    link: AppRoute.CURRENCY,
-    title: `Конвертер валют`,
-  },
+const Percentage = {
+  AUTO_DEFAULT: 16,
+  AUTO_DISCOUNT: 15,
+  AUTO_WITH_OPTION: 8.5,
+  AUTO_MIN: 3.5,
+  HOME_DEFAULT: 9.4,
+  HOME_DISCOUNT: 8.5,
+};
 
-  SERVICES: {
-    link: AppRoute.SERVICES,
-    title: `Услуги`,
+const StorageField = {
+  EMAIL: `email`,
+  LOGIN: `login`,
+  NAME: `name`,
+  PASSWORD: `password`,
+  PHONE: `phone`,
+};
+
+const CreditData = {
+  home: {
+    totalSum: {
+      label: `Стоимость недвижимости`,
+      min: 1200000,
+      max: 25000000,
+      step: 100000,
+    },
+    initialPayment: {
+      label: `Первоначальный взнос`,
+      min: 10,
+      max: 100,
+      step: 5,
+      unit: `%`,
+    },
+    minLoanSum: 500000,
+    period: {
+      label: `Срок кредитования`,
+      min: 5,
+      max: 30,
+      step: 1,
+      unit: `лет`,
+    },
+    options: [
+      {
+        title: OptionType.MAT_CAPITAL,
+        label: `Использовать материнский капитал`,
+      },
+    ],
+  },
+  auto: {
+    totalSum: {
+      label: `Стоимость автомобиля`,
+      min: 500000,
+      max: 5000000,
+      step: 50000,
+    },
+    initialPayment: {
+      label: `Первоначальный взнос`,
+      min: 20,
+      max: 100,
+      step: 5,
+      unit: `%`,
+    },
+    minLoanSum: 200000,
+    period: {
+      label: `Срок кредитования`,
+      min: 1,
+      max: 5,
+      step: 1,
+      unit: `лет`,
+    },
+    options: [
+      {
+        title: OptionType.CASCO,
+        label: `Оформить КАСКО в нашем банке`,
+      },
+      {
+        title: OptionType.LIFE_INSURANCE,
+        label: `Оформить Страхование жизни в нашем банке`,
+      },
+    ],
   },
 };
 
-const HEADER_LINKS = [Navigation.SERVICES, Navigation.CREDIT, Navigation.CURRENCY, Navigation.CONTACTS];
-
-export {AppRoute, Breakpoint, ESC_KEY, HEADER_LINKS, Navigation, TabType, TabTypeToData, Viewport};
+export {
+  AppRoute,
+  AUTO_TOTAL_PRICE_FOR_DISCOUNT,
+  Breakpoint,
+  CreditData,
+  CreditType,
+  ESC_KEY,
+  HEADER_LINKS,
+  HOME_FIRST_PAYMENT_RATE_FOR_DISCOUNT,
+  INCOME_RATE,
+  MAT_CAPITAL,
+  Navigation,
+  OptionType,
+  Percentage,
+  StorageField,
+  TabType,
+  TabTypeToData,
+  Viewport
+};
