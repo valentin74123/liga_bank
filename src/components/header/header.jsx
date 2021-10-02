@@ -1,10 +1,11 @@
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import {getClassName} from '../../utils';
-import {ESC_KEY, HEADER_LINKS, Viewport} from '../../const';
+import {ESC_KEY, HEADER_LINKS, Viewport, PopupType} from '../../const';
 import {getViewport} from '../../store/page/selectors';
+import {setPopup} from '../../store/actions';
 import Logo from '../logo/logo';
 
 const Header = (props) => {
@@ -49,6 +50,11 @@ const Header = (props) => {
   const headerClassName = useMemo(() => getClassName(`header`, isMenuOpen ? `header--open` : `header--close`), [isMenuOpen]);
 
 
+  const dispatch = useDispatch();
+
+  const handleLoginClick = useCallback(() => dispatch(setPopup(PopupType.LOGIN)), [dispatch]);
+
+
   return (
     <header className={headerClassName}>
       <div className="header__wrapper">
@@ -76,7 +82,7 @@ const Header = (props) => {
 
           <div className="header__user-nav user-nav">
             <div className="user-nav__wrapper">
-              <button className="user-nav__link" type="button" aria-label="Войти в Интернет-банк">
+              <button onClick={handleLoginClick} className="user-nav__link" type="button" aria-label="Войти в Интернет-банк">
                 <svg className="user-nav__icon" width="20" height="22">
                   <use xlinkHref="#login"></use>
                 </svg>

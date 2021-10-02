@@ -183,6 +183,11 @@ const PINS = [
   {id: `Omsk`, coords: [54.989347, 73.368221]},
 ];
 
+const PopupType = {
+  LOGIN: `login`,
+  SUCCESS_MESSAGE: `success-message`,
+};
+
 export {
   AppRoute,
   AUTO_TOTAL_PRICE_FOR_DISCOUNT,
@@ -202,5 +207,6 @@ export {
   TabTypeToData,
   Viewport,
   PINS,
-  FOOTER_LINKS
+  FOOTER_LINKS,
+  PopupType
 };

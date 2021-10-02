@@ -1,11 +1,11 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import NumberFormat from 'react-number-format';
-import {CreditType, StorageField} from '../../const';
+import {CreditType, StorageField, PopupType} from '../../const';
 import {getCreditType, getInitialPayment, getPeriod, getTotalSum} from '../../store/credit/selectors';
 import {getRequestNumber} from '../../store/page/selectors';
 import {formatMoneyString, formatRequestNumber, getPeriodLabel, getClassName} from '../../utils';
-import {incrementRequest} from '../../store/actions';
+import {incrementRequest, setPopup} from '../../store/actions';
 
 const typeToTitle = {
   [CreditType.AUTO]: `Автокредит`,
@@ -45,6 +45,8 @@ const RequestForm = () => {
     localStorage.setItem(StorageField.EMAIL, email);
 
     dispatch(incrementRequest());
+
+    dispatch(setPopup(PopupType.SUCCESS_MESSAGE));
   }, [dispatch, formElement]);
 
   const handleFormInvalid = useCallback(() => {
@@ -125,7 +127,7 @@ const RequestForm = () => {
           <div className="request-form__field request-form__field--user">
             <label htmlFor="request-user" className="visually-hidden">ФИО</label>
 
-            <input type="text" name="request-user" id="request-user" placeholder="ФИО" required/>
+            <input type="text" name="request-user" id="request-user" placeholder="ФИО" required autoComplete="off"/>
           </div>
 
           <div className="request-form__field request-form__field--contact">
@@ -142,13 +144,14 @@ const RequestForm = () => {
               value={currentPhone}
               onValueChange={({formattedValue}) => setPhone(formattedValue)}
               required
+              autoComplete="off"
             />
           </div>
 
           <div className="request-form__field request-form__field--contact">
             <label htmlFor="request-email" className="visually-hidden">E-mail</label>
 
-            <input type="email" name="request-email" id="request-email" placeholder="E-mail" required/>
+            <input type="email" name="request-email" id="request-email" placeholder="E-mail" required autoComplete="off"/>
           </div>
 
           <button className="request-form__button button" type="submit">Отправить</button>

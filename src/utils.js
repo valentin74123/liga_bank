@@ -52,3 +52,6 @@ export const getAnnuityPayment = (total, yearRate, period) => {
 
 export const formatRequestNumber = (count) => `№ ${String(count).padStart(4, `0`)}`;
 export const formatMoneyString = (count) => `${count.toLocaleString(`ru-RU`)} рублей`;
+
+export const getBodyScrollTop = () => window.pageYOffset || (document.documentElement && document.documentElement.ScrollTop) || (document.body && document.body.scrollTop);
+export const isVerticalScroll = () => document.body.offsetHeight > window.innerHeight;

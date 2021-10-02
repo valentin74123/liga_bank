@@ -1,0 +1,18 @@
+.popup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $bg-popup;
+  z-index: 2;
+
+  @media (max-width: $mobile-width) {
+    padding: 0 5%;
+  }
+}

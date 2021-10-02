@@ -4,6 +4,7 @@ export const ActionType = {
   SET_VIEWPORT: `PAGE/SET_VIEWPORT`,
   SET_FORM_STEP: `PAGE/SET_FORM_STEP`,
   INCREMENT_REQUEST: `PAGE/INCREMENT_REQUEST`,
+  SET_POPUP: `PAGE/SET_POPUP`,
   SET_CREDIT_TYPE: `CREDIT/SET_CREDIT_TYPE`,
   SET_INITIAL_PAYMENT: `CREDIT/SET_INITIAL_PAYMENT`,
   SET_INITIAL_PAYMENT_RATE: `CREDIT/SET_RATE`,
@@ -69,3 +70,7 @@ export const resetOptions = createAction(ActionType.RESET_OPTIONS);
 export const updateInitialPayment = createAction(ActionType.UPDATE_INITIAL_PAYMENT);
 
 export const updateInitialPaymentRate = createAction(ActionType.UPDATE_INITIAL_PAYMENT_RATE);
+
+export const setPopup = createAction(ActionType.SET_POPUP, (popupType) => ({
+  payload: popupType,
+}));
