@@ -8,14 +8,14 @@ import {setViewport, setPopup} from '../../store/actions';
 
 import Header from "../header/header";
 import Slider from "../slider/slider";
-// import TabsSection from "../tabs-section/tabs-section";
+import TabsSection from "../tabs-section/tabs-section";
 // import CreditCalculator from "../credit-calculator/credit-calculator";
-import MapSection from "../map-section/map-section";
+// import MapSection from "../map-section/map-section";
 import Footer from "../footer/footer";
 import Popup from "../popup/popup";
 
-const CreditCalculator = loadable(() => import('../credit-calculator/credit-calculator'));
-const MapSection = loadable(() => import('../map-section/map-section'));
+const CreditCalculator = loadable(() => import ('../credit-calculator/credit-calculator'));
+const MapSection = loadable(() => import ('../map-section/map-section'));
 
 const CalculateLoanScreen = () => {
   const viewport = useSelector(getViewport);
