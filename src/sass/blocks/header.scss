@@ -1,12 +1,12 @@
 .header {
   position: relative;
-  margin: 0;
-  padding-top: 26px;
-  padding-bottom: 17px;
-  z-index: 2;
-
   font-size: 16px;
 
+  @include zero-margin();
+  padding-top: 26px;
+  padding-bottom: 17px;
+
+  z-index: 2;
   background-color: $light-white1;
 }
 
@@ -40,9 +40,9 @@
 
 @media (max-width: $tablet-width) {
   .header {
+    font-size: 14px;
     padding-top: 22px;
     padding-bottom: 3px;
-    font-size: 14px;
   }
 
   .header__logo {
@@ -50,19 +50,18 @@
   }
 
   .header__user-nav {
+    font-size: 0;
     width: 50px;
     margin-left: auto;
     margin-top: 0;
-
-    font-size: 0;
   }
 }
 
 @media (max-width: $mobile-width) {
   .header {
+    font-size: 16px;
     padding-top: 13px;
     padding-bottom: 12px;
-    font-size: 16px;
   }
 
   .header__wrapper {
@@ -162,12 +161,11 @@
     }
 
     .header__user-nav {
+      font-size: inherit;
       width: 100%;
       margin-top: 20px;
       margin-bottom: 5px;
       margin-left: 0;
-
-      font-size: inherit;
     }
 
     .user-nav__icon {

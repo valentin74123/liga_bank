@@ -1,15 +1,22 @@
 .credit-price-field {
-  margin-bottom: 20px;
+  margin-bottom: 19px;
 
   input {
-    width: 45%;
-    padding-right: 5px;
     font: inherit;
     line-height: inherit;
     text-align: right;
 
     border: none;
     background-color: transparent;
+
+    width: 45%;
+    padding-right: 5px;
+  }
+
+  &:nth-child(3) {
+    .credit-price-field__label {
+      margin-bottom: 8px;
+    }
   }
 }
 
@@ -25,16 +32,17 @@
 
 .credit-price-field__label {
   display: block;
-  margin-bottom: 10px;
   font-size: 16px;
   line-height: 1.4;
   color: $dark-gray1;
+  margin-bottom: 10px;
 }
 
 .credit-price-field__wrapper {
-  @include field();
   display: flex;
   justify-content: center;
+
+  @include field();
   margin-bottom: 5px;
 }
 
@@ -46,6 +54,7 @@
   padding: 0;
   border: none;
   background-color: transparent;
+
   cursor: pointer;
 
   &--minus {
@@ -96,6 +105,7 @@
 
   .credit-price-field__wrapper {
     font-size: 16px;
+    margin-right: 3px;
   }
 }
 

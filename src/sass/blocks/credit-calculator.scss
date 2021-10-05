@@ -8,12 +8,12 @@
 }
 
 .credit-calculator__title {
-  margin: 0;
-  margin-bottom: 50px;
-
   font-size: 41px;
   font-weight: 700;
   line-height: 1.4;
+
+  @include zero-margin();
+  margin-bottom: 50px;
 }
 
 .credit-calculator__container {
@@ -38,8 +38,8 @@
 
 @media (max-width: $tablet-width) {
   .credit-calculator__title {
+    font-size: 32px;
     margin-bottom: 29px;
-    font-size: 16px * 2;
   }
 
   .credit-calculator__step {
@@ -63,8 +63,8 @@
 
 @media (max-width: $mobile-width) {
   .credit-calculator__title {
-    margin-bottom: 24px;
     font-size: 22px;
+    margin-bottom: 22px;
   }
 
   .credit-calculator__offer {
@@ -81,7 +81,7 @@
   }
 
   .credit-calculator__step-title {
-    margin-bottom: 8px;
     font-size: 16px;
+    margin-bottom: 8px;
   }
 }

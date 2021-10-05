@@ -29,7 +29,7 @@ const Tabs = (props) => {
               <use xlinkHref={imgId}></use>
             </svg>
 
-            <h3>{title}</h3>
+            <h3 className="tabs__title">{title}</h3>
           </li>
         );
       })}

@@ -17,9 +17,9 @@ const Footer = () => {
           <Logo className="footer__logo" isMobile={isMobile} />
 
           <div className="footer__item footer__item--info">
-            <address className="footer__text text-margin ">150015, г. Москва, ул. Московская, д. 32</address>
-            <p className="footer__text text-margin ">Генеральная лицензия Банка России №1050</p>
-            <p className="footer__text text-margin ">&copy; Лига Банк, 2019</p>
+            <address className="footer__text">150015, г. Москва, ул. Московская, д. 32</address>
+            <p className="footer__text">Генеральная лицензия Банка России №1050</p>
+            <p className="footer__text">&copy; Лига Банк, 2019</p>
           </div>
 
           <div className="footer__item footer__item--nav">

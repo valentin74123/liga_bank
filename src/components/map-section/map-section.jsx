@@ -12,7 +12,7 @@ const MapSection = () => {
           <div className="map-section__map-wrapper">
             <Map className="map-section__map"
               state={{
-                center: [56.838011, 55.597474],
+                center: [56.938011, 59.597474],
                 zoom: 5,
               }}
             >

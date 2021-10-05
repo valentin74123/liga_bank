@@ -1,12 +1,12 @@
 .footer {
-  padding-top: 48px;
-  padding-bottom: 40px;
-
   font-size: 12px;
   line-height: 1.4;
   color: $gray;
 
   background-color: $light-white1;
+
+  padding-top: 48px;
+  padding-bottom: 40px;
 }
 
 .footer__wrapper {
@@ -39,7 +39,6 @@
 .footer__item {
   &--info {
     width: 267px;
-    padding-right: 15px;
     margin-top: 45px;
   }
 
@@ -54,11 +53,13 @@
 
 .footer__text {
   font-style: normal;
+
+  @include zero-margin();
 }
 
 @media (max-width: $tablet-width) {
   .footer {
-    padding-top: 50px;
+    padding-top: 47px;
   }
 
   .footer__wrapper {
@@ -79,7 +80,7 @@
   }
 
   .footer__item {
-    margin-bottom: 13px;
+    margin-bottom: 14px;
 
     &--info {
       margin-top: 0;
@@ -88,7 +89,7 @@
 
     &--nav {
       margin-top: 45px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     &--social {
@@ -99,7 +100,7 @@
 
 @media (max-width: $mobile-width) {
   .footer {
-    padding-top: 32px;
+    padding-top: 30px;
   }
 
   .footer__wrapper {
@@ -120,7 +121,7 @@
 
     &--nav {
       margin-top: 32px;
-      margin-bottom: 3px;
+      margin-bottom: 0;
     }
   }
 

@@ -11,6 +11,7 @@
 @media (max-width: $tablet-width) {
   .tabs-section__container {
     width: 100%;
-    margin: 0;
+
+    @include zero-margin();
   }
 }

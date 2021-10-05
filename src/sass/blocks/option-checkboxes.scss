@@ -6,6 +6,7 @@
 
 .option-checkboxes__label {
   display: flex;
+  cursor: pointer;
 }
 
 .option-checkboxes__box {
@@ -26,7 +27,7 @@ input:focus + .option-checkboxes__label .option-checkboxes__box {
 
 input:checked + .option-checkboxes__label .option-checkboxes__box {
   background-color: $blue1;
-  background-image: url("../img/tick.svg");
+  background-image: url("../img/tick-white.svg");
   background-repeat: no-repeat;
   background-size: 8px 6px;
   background-position: center;

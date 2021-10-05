@@ -48,9 +48,8 @@
   }
 
   .navigation__item {
+    @include zero-margin();
     padding: 20px 15px;
-    margin: 0;
-
     border-bottom: 1px solid $light-gray1;
   }
 }

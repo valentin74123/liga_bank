@@ -8,8 +8,17 @@ const FieldType = {
   TEXT: `text`,
   PASSWORD: `password`,
 };
+const LoginForm = (props) => {
+  const {onButtonClick} = props;
 
-function LoginForm({onButtonClick}) {
+  let oldLogin = ``;
+  let oldPassword = ``;
+
+  if (localStorage) {
+    oldLogin = localStorage.getItem(StorageField.LOGIN);
+    oldPassword = localStorage.getItem(StorageField.PASSWORD);
+  }
+
   const loginRef = useRef();
   const [loginInput, setLoginInput] = useState(null);
 
@@ -62,6 +71,7 @@ function LoginForm({onButtonClick}) {
               name="login"
               autoComplete="off"
               required
+              defaultValue={oldLogin}
             />
           </div>
 
@@ -74,6 +84,7 @@ function LoginForm({onButtonClick}) {
               value={password}
               onChange={handlePasswordChange}
               required
+              defaultValue={oldPassword}
             />
 
             <button
@@ -93,7 +104,7 @@ function LoginForm({onButtonClick}) {
       </section>
     </FocusTrap>
   );
-}
+};
 
 LoginForm.propTypes = {
   onButtonClick: PropTypes.func.isRequired,

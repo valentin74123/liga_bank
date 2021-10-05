@@ -41,22 +41,22 @@
 }
 
 @mixin button () {
-  padding: 16px 30px 13px;
-
   font-size: 16px;
   line-height: 1.4;
   color: $light-white1;
   text-align: center;
   background-color: $blue1;
 
+  padding: 16px 30px 13px;
+
   @media (max-width: $tablet-width) {
     padding: 14px 30px 12px;
   }
 
   @media (max-width: $mobile-width) {
+    font-size: 14px;
     padding-top: 14px;
     padding-bottom: 15px;
-    font-size: 14px;
   }
 }
 
@@ -64,15 +64,18 @@
   position: relative;
   display: flex;
   align-items: center;
-  height: 60px;
-  padding: 2px 24px 0;
-
   font-weight: 500;
-
   border: 1px solid $dark;
   border-radius: 4px;
+
+  height: 60px;
+  padding: 2px 24px 0;
 
   @media (max-width: $mobile-width) {
     padding: 0 15px;
   }
+}
+
+@mixin zero-margin() {
+  margin: 0;
 }

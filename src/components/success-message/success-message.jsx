@@ -8,8 +8,8 @@ const SuccessMessage = (props) => {
   return (
     <FocusTrap>
       <div className="success-message">
-        <h3 className="success-message__title text-margin">Спасибо за обращение в наш банк.</h3>
-        <p className="success-message__text text-margin">Наш менеджер скоро свяжется с вами по указанному номеру телефона.</p>
+        <h3 className="success-message__title">Спасибо за обращение в наш банк.</h3>
+        <p className="success-message__text">Наш менеджер скоро свяжется с вами по указанному номеру телефона.</p>
 
         <button className="success-message__button button-close" onClick={onButtonClick} aria-label="Закрыть"></button>
       </div>

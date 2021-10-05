@@ -18,32 +18,32 @@
     background-color: $light-white1;
   }
 
-  h3 {
-    margin: 20px 0 18px;
-
-    font-size: 18px;
-    line-height: normal;
-    color: $dark-gray3;
-    font-weight: 500;
-  }
-
   &--services {
     .tabs__icon {
       margin-right: 0;
     }
 
-    h3 {
+    .tabs__title {
       padding-right: 9px;
     }
   }
 }
 
 .tabs__icon {
+  color: $light-blue;
+
   width: 34px;
   height: 34px;
   margin-right: 10px;
+}
 
-  color: $light-blue;
+.tabs__title {
+  font-size: 18px;
+  line-height: normal;
+  color: $dark-gray3;
+  font-weight: 500;
+
+  margin: 20px 0 18px;
 }
 
 @media (max-width: $tablet-width) {

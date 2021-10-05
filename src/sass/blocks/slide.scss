@@ -13,9 +13,9 @@
     }
 
     .slide__button {
-      padding: 15px 36px 16px;
       color: $dark;
       background-color: $light-white1;
+      padding: 15px 36px 16px;
     }
   }
 
@@ -29,9 +29,9 @@
     }
 
     .slide__button {
-      padding: 15px 48px 16px;
       color: $light-white1;
       background-color: $blue1;
+      padding: 15px 48px 16px;
     }
   }
 
@@ -65,36 +65,36 @@
 .slide__wrapper {
   @include container();
 
-  padding: 103px 268px;
+  padding: 103px 218px;
 }
 
 .slide__title {
-  max-width: 70%;
-  margin: 0;
-  margin-bottom: 6px;
-
   font-size: 18px * 3;
   line-height: normal;
   font-weight: bold;
+
+  @include zero-margin();
+  margin-bottom: 6px;
+  max-width: 70%;
 }
 
 .slide__text {
-  max-width: 50%;
-  margin: 0;
-  margin-bottom: 33px;
-
   font-size: 22px;
   line-height: normal;
   font-weight: normal;
   color: $light-white3;
+
+  @include zero-margin();
+  margin-bottom: 38px;
+  max-width: 50%;
 }
 
 .slide__button {
-  width: max-content;
-
   font-size: 18px;
   line-height: normal;
   font-weight: 500;
+
+  width: max-content;
 }
 
 @media (max-width: $tablet-width) {
@@ -110,7 +110,7 @@
       }
 
       .slide__button {
-        padding: 18px 31px;
+        padding: 15px 31px;
       }
     }
 
@@ -132,7 +132,7 @@
       }
 
       .slide__button {
-        padding: 18px 31px;
+        padding: 15px 31px;
       }
     }
   }
@@ -142,13 +142,13 @@
   }
 
   .slide__title {
-    margin-bottom: 4px;
     font-size: 46px;
+    margin-bottom: 4px;
   }
 
   .slide__text {
-    margin-bottom: 29px;
     font-size: 18px;
+    margin-bottom: 31px;
   }
 
   .slide__button {
@@ -195,8 +195,8 @@
   }
 
   .slide__text {
-    margin-bottom: 26px;
     font-size: 16px;
+    margin-bottom: 26px;
   }
 
   .slide__button {

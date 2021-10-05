@@ -1,7 +1,7 @@
 .credit-purpose {
   font-size: 16px;
   line-height: 1.4;
-  padding-top: 6px;
+  padding-top: 5px;
 }
 
 .credit-purpose__select {
@@ -40,6 +40,12 @@
 
   &:not(:last-child) {
     border-bottom: 1px solid $light-gray1;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .credit-purpose__select {
+    margin-right: 3px;
   }
 }
 

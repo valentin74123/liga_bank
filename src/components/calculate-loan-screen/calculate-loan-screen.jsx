@@ -1,5 +1,6 @@
 import React, {useEffect, useCallback} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import loadable from '@loadable/component';
 import {Navigation} from '../../const';
 import {defineViewportWidth} from '../../utils';
 import {getViewport, getPopup} from '../../store/page/selectors';
@@ -7,11 +8,14 @@ import {setViewport, setPopup} from '../../store/actions';
 
 import Header from "../header/header";
 import Slider from "../slider/slider";
-import TabsSection from "../tabs-section/tabs-section";
-import CreditCalculator from "../credit-calculator/credit-calculator";
+// import TabsSection from "../tabs-section/tabs-section";
+// import CreditCalculator from "../credit-calculator/credit-calculator";
 import MapSection from "../map-section/map-section";
 import Footer from "../footer/footer";
 import Popup from "../popup/popup";
+
+const CreditCalculator = loadable(() => import('../credit-calculator/credit-calculator'));
+const MapSection = loadable(() => import('../map-section/map-section'));
 
 const CalculateLoanScreen = () => {
   const viewport = useSelector(getViewport);

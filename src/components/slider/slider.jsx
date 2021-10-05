@@ -1,6 +1,7 @@
 import React from 'react';
 import SwiperCore, {Pagination, Autoplay} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
+import {Link} from 'react-scroll';
 
 SwiperCore.use([Pagination, Autoplay]);
 
@@ -17,9 +18,9 @@ const Slider = () => {
         <div className="slide__wrapper">
           <h3 className="slide__title">Лига Банк</h3>
           <p className="slide__text">Кредиты на любой случай</p>
-          <a className="slide__button button">
+          <Link to="calculator" smooth offset={-40} duration={500} className="slide__button button">
             Рассчитать кредит
-          </a>
+          </Link>
         </div>
       </SwiperSlide>
 
@@ -34,9 +35,9 @@ const Slider = () => {
         <div className="slide__wrapper">
           <h3 className="slide__title">Лига Банк</h3>
           <p className="slide__text">Всегда рядом</p>
-          <a className="slide__button button">
+          <Link to="map-section" smooth offset={-40} duration={500} className="slide__button button">
             Найти отделение
-          </a>
+          </Link>
         </div>
       </SwiperSlide>
     </Swiper>

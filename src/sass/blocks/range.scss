@@ -1,6 +1,7 @@
 .range {
   width: calc(100% - 14px);
-  margin: 15px auto;
+  margin: 13px auto;
+  margin-bottom: 23px;
   padding-bottom: 20px;
 }
 
@@ -8,6 +9,12 @@
   .input-range__label--min,
   .input-range__label--max {
     display: none;
+  }
+
+  .input-range__label--max {
+    .input-range__label-container {
+      left: 5px;
+    }
   }
 
   .input-range__label--value {
@@ -28,6 +35,12 @@
   color: $gray;
   display: flex;
   justify-content: space-between;
+}
+
+@media (max-width: $tablet-width) {
+  .range {
+    margin-bottom: 17px;
+  }
 }
 
 @media (max-width: $mobile-width) {
