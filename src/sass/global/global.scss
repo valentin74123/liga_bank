@@ -30,6 +30,10 @@
     position: fixed;
     overflow-y: scroll;
   }
+
+  @media (max-width: $tablet-width) {
+    display: block;
+  }
 }
 
 .main {
