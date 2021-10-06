@@ -1,7 +1,7 @@
 import React, {useCallback, useMemo, useState} from 'react';
 import PropTypes from 'prop-types';
 import {useSelector, useDispatch} from 'react-redux';
-import {CreditData, CreditType} from '../../const';
+import {CreditData, CreditType, ENTER_KEY} from '../../const';
 import {getClassName} from '../../utils';
 import {resetOptions, setCreditType, setInitialPayment, setInitialPaymentRate, setPeriod, setTotalPrice, setStep} from '../../store/actions';
 import {getCreditType} from '../../store/credit/selectors';
@@ -42,7 +42,37 @@ const CreditPurpose = (props) => {
     dispatch(setStep(2));
   }, [dispatch, resetCreditParameters]);
 
+  const optionOnFocus = (evt) => {
+    if (evt.key === ENTER_KEY) {
+      const type = evt.target.id;
+      setOpenStatus(false);
+      resetCreditParameters(type);
+      dispatch(setStep(2));
+
+      const element = evt.target;
+      element.removeEventListener(`keydown`, optionOnFocus);
+    }
+  };
+
+  const handleOptionFocus = useCallback((evt) => {
+    const element = evt.target;
+    element.addEventListener(`keydown`, optionOnFocus);
+  }, [dispatch, resetCreditParameters]);
+
   const handleSelectClick = useCallback(() => setOpenStatus((prev) => !prev), []);
+
+  const seletctOnFocus = (evt) => {
+    if (evt.key === ENTER_KEY) {
+      setOpenStatus((prev) => !prev);
+      const element = evt.target;
+      element.removeEventListener(`keydown`, seletctOnFocus);
+    }
+  };
+
+  const handleSelectFocus = useCallback((evt) => {
+    const element = evt.target;
+    element.addEventListener(`keydown`, seletctOnFocus);
+  }, []);
 
   const selectText = useMemo(() => checkedCredit ? CreditToTitle[checkedCredit] : `Выберите цель кредита`, [checkedCredit]);
 
@@ -53,6 +83,7 @@ const CreditPurpose = (props) => {
   return (
     <form id="credit-purpose" className={formClass}>
       <span
+        onFocus={handleSelectFocus}
         onClick={handleSelectClick}
         className={getClassName(
             `credit-purpose__select`,
@@ -72,6 +103,7 @@ const CreditPurpose = (props) => {
             key={type}
             id={type}
             className="credit-purpose__option"
+            onFocus={handleOptionFocus}
             onClick={handleOptionClick}
             tabIndex="0"
           >

@@ -2,10 +2,10 @@
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
+  column-gap: 25px;
 }
 
 .navigation__item {
-  margin-right: 25px;
   padding-bottom: 15px;
 }
 
@@ -29,10 +29,7 @@
 @media (max-width: $tablet-width) {
   .navigation__list {
     margin-top: 7px;
-  }
-
-  .navigation__item {
-    margin-right: 20px;
+    column-gap: 20px;
   }
 }
 
@@ -43,7 +40,7 @@
 
   .navigation__list {
     flex-direction: column;
-
+    column-gap: normal;
     border-top: 1px solid $light-gray1;
   }
 

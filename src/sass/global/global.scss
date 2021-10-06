@@ -5,10 +5,13 @@
 }
 
 .page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   padding: 0;
 
   @include zero-margin();
@@ -25,8 +28,12 @@
 
   &--lock {
     position: fixed;
-    // overflow-y: scroll;
+    overflow-y: scroll;
   }
+}
+
+.main {
+  display: contents;
 }
 
 .list {

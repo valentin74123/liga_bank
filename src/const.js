@@ -1,4 +1,5 @@
 const ESC_KEY = `Escape`;
+const ENTER_KEY = `Enter`;
 const AUTO_TOTAL_PRICE_FOR_DISCOUNT = 2000000;
 const HOME_FIRST_PAYMENT_RATE_FOR_DISCOUNT = 15;
 const INCOME_RATE = 0.45;
@@ -208,5 +209,6 @@ export {
   Viewport,
   PINS,
   FOOTER_LINKS,
-  PopupType
+  PopupType,
+  ENTER_KEY
 };
