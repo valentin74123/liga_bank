@@ -5,8 +5,6 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import TabContent from '../tab-content/tab-content';
 import {TabType} from '../../const';
 
-import "swiper/swiper.scss";
-import "swiper/components/pagination/pagination.scss";
 import "./style.scss";
 
 SwiperCore.use([Pagination]);
