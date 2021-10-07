@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 import {getClassName} from '../../utils';
 import {TabType, TabTypeToData} from '../../const';
 
+import "./style.scss";
+
 const Tabs = (props) => {
   const {activeTab, onClick} = props;
 
   const TABS = Object.values(TabType);
 
   return (
-    <ul className="tabs list">
+    <ul className="tabs">
       {TABS.map((type) => {
         const {imgId, title} = TabTypeToData[type];
         const isActive = type === activeTab;

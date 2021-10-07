@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom';
 import FocusTrap from 'focus-trap-react';
 import {StorageField} from '../../const';
 
+import "./style.scss";
+
 const FieldType = {
   TEXT: `text`,
   PASSWORD: `password`,
@@ -99,7 +101,7 @@ const LoginForm = (props) => {
 
           <Link className="login-form__link" to="/">Забыли пароль?</Link>
 
-          <button className="login-form__submit button" type="submit">Войти</button>
+          <button className="login-form__submit" type="submit">Войти</button>
         </form>
       </section>
     </FocusTrap>

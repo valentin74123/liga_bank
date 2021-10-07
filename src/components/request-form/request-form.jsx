@@ -7,6 +7,8 @@ import {getRequestNumber} from '../../store/page/selectors';
 import {formatMoneyString, formatRequestNumber, getPeriodLabel, getClassName} from '../../utils';
 import {incrementRequest, setPopup} from '../../store/actions';
 
+import "./style.scss";
+
 const typeToTitle = {
   [CreditType.AUTO]: `Автокредит`,
   [CreditType.HOME]: `Ипотека`,
@@ -154,7 +156,7 @@ const RequestForm = () => {
             <input type="email" name="request-email" id="request-email" placeholder="E-mail" required autoComplete="off"/>
           </div>
 
-          <button className="request-form__button button" type="submit">Отправить</button>
+          <button className="request-form__button" type="submit">Отправить</button>
         </div>
       </form>
     </section>

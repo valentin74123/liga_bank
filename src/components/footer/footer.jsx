@@ -5,6 +5,8 @@ import {FOOTER_LINKS, Viewport} from '../../const';
 import {getViewport} from '../../store/page/selectors';
 import Logo from '../logo/logo';
 
+import "./style.scss";
+
 const Footer = () => {
   const viewportType = useSelector(getViewport);
 
@@ -23,7 +25,7 @@ const Footer = () => {
           </div>
 
           <div className="footer__item footer__item--nav">
-            <ul className="footer-nav list">
+            <ul className="footer-nav">
               {FOOTER_LINKS.map(({link, title}) => (
                 <li key={link} className="footer-nav__item">
                   <Link to={link} className="footer-nav__link">{title}</Link>
@@ -55,7 +57,7 @@ const Footer = () => {
           </div>
 
           <div className="footer__item footer__item--social social">
-            <ul className="social__list list">
+            <ul className="social__list">
               <li className="social__item">
                 <Link to="/" className="social__link" aria-label="Лига Банк в фейсбук">
                   <svg className="icon" width="9" height="16"><use xlinkHref="#facebook"></use></svg>

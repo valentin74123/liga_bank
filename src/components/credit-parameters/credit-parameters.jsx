@@ -13,6 +13,8 @@ import CreditRangeField from '../credit-range-field/credit-range-field';
 import RangeSlider from '../range-slider/range-slider';
 import OptionCheckboxes from '../option-checkboxes/option-checkboxes';
 
+import "./style.scss";
+
 const CreditParameters = (props) => {
   const {className} = props;
 

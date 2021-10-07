@@ -6,6 +6,8 @@ import {getBodyScrollTop, isVerticalScroll} from '../../utils';
 import LoginForm from '../login-form/login-form';
 import SuccessMessage from '../success-message/success-message';
 
+import "./style.scss";
+
 const Popup = (props) => {
   const {id, onClose} = props;
 

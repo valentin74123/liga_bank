@@ -6,6 +6,8 @@ import {clearNumber, getClassName, isValidValue} from '../../utils';
 import {getTotalSum, getValidityStatus} from '../../store/credit/selectors';
 import {setTotalPrice, setValidStatus, updateInitialPayment} from '../../store/actions';
 
+import "./style.scss";
+
 const CreditPriceField = (props) => {
   const {priceParams: {min, max, label, step}} = props;
 

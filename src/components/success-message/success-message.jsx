@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FocusTrap from 'focus-trap-react';
 
+import "./style.scss";
+
 const SuccessMessage = (props) => {
   const {onButtonClick} = props;
 
@@ -11,7 +13,7 @@ const SuccessMessage = (props) => {
         <h3 className="success-message__title">Спасибо за обращение в наш банк.</h3>
         <p className="success-message__text">Наш менеджер скоро свяжется с вами по указанному номеру телефона.</p>
 
-        <button className="success-message__button button-close" onClick={onButtonClick} aria-label="Закрыть"></button>
+        <button className="success-message__button" onClick={onButtonClick} aria-label="Закрыть"></button>
       </div>
     </FocusTrap>
   );

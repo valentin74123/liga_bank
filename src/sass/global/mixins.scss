@@ -60,6 +60,41 @@
   }
 }
 
+@mixin basik-button {
+  @include button-reset();
+  @include element-brightness();
+
+  text-align: center;
+  text-decoration: none;
+
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@mixin button-close {
+  @include button-reset();
+
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  background-image: url("../../img/cross.svg");
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  background-position: center;
+  border-radius: 0;
+
+  cursor: pointer;
+
+  @include element-brightness();
+
+  @media (max-width: $mobile-width) {
+    width: 12px;
+    height: 12px;
+    background-size: 100%;
+  }
+}
+
 @mixin field() {
   position: relative;
   display: flex;
@@ -78,4 +113,10 @@
 
 @mixin zero-margin() {
   margin: 0;
+}
+
+@mixin list() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

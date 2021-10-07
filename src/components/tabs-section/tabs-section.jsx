@@ -5,6 +5,8 @@ import TabsSlider from '../tabs-slider/tabs-slider';
 import {TabType, Viewport} from '../../const';
 import {getViewport} from '../../store/page/selectors';
 
+import "./style.scss";
+
 const TabsSection = () => {
   const viewportType = useSelector(getViewport);
   const [activeTab, setActiveTab] = useState(TabType.DEPOSIT);

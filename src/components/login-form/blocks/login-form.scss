@@ -1,0 +1,124 @@
+.login-form {
+  position: relative;
+  width: 544px;
+  padding: 60px;
+  background-color: $light-white1;
+}
+
+.login-form__logo {
+  margin-bottom: 18px;
+}
+
+.login-form__close {
+  @include button-close();
+
+  top: 56px;
+  right: 56px;
+  width: 24px;
+  height: 24px;
+  background-size: 16px 16px;
+}
+
+.login-form__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form__field {
+  position: relative;
+  margin-bottom: 4px;
+
+  label {
+    font-size: 16px;
+    line-height: 1.4;
+    color: $dark-gray1;
+
+    display: block;
+    padding-top: 20px;
+    margin-bottom: 4px;
+  }
+
+  input {
+    font: inherit;
+    font-size: 18px;
+    line-height: 1.4;
+    color: $dark;
+
+    border: 1px solid $dark;
+    border-radius: 4px;
+    background-color: transparent;
+
+    display: block;
+    width: 100%;
+    padding: 17px 24px 18px;
+  }
+
+  .login-form__toggle-password {
+    @include button-reset();
+
+    position: absolute;
+    top: 64px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background-image: url("./img/eye.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 22px 12px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+
+.login-form__link {
+  font-size: 12px;
+  line-height: 1.4;
+  color: $gray;
+
+  text-decoration: none;
+  align-self: flex-end;
+  margin-bottom: 24px;
+}
+
+.login-form__submit {
+  @include basik-button();
+  @include button();
+  
+
+  width: 100%;
+}
+
+@media (max-width: $tablet-width) {
+  .login-form {
+    width: 100%;
+    padding-left: 88px;
+    padding-right: 88px;
+  }
+
+  .login-form__close {
+    right: 84px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .login-form {
+    padding: 50px 20px;
+  }
+
+  .login-form__close {
+    top: 45px;
+    right: 20px;
+  }
+
+  .login-form__link {
+    order: 2;
+    align-self: center;
+    margin-bottom: 0;
+  }
+
+  .login-form__submit {
+    margin-top: 26px;
+    margin-bottom: 10px;
+  }
+}
+

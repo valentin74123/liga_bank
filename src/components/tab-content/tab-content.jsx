@@ -5,6 +5,8 @@ import {Service} from '../../data/services';
 import {getClassName} from '../../utils';
 import {TabType, Viewport} from '../../const';
 
+import "./style.scss";
+
 const getImgSize = (viewportType) => {
   switch (viewportType) {
     case Viewport.MOBILE:
@@ -44,7 +46,7 @@ const TabContent = (props) => {
         <div className="tabs-content__column tabs-content__column--left">
           <h3 className="tabs-content__title">{title}</h3>
 
-          <ul className="tabs-content__features list">
+          <ul className="tabs-content__features">
             {features.map(({id, text}) => (
               <li key={id} className="tabs-content__item">
                 <span>{text}</span>
@@ -56,7 +58,7 @@ const TabContent = (props) => {
             <p className="tabs-content__credit-info">
               Рассчитайте ежемесячный платеж и&nbsp;ставку&nbsp;по кредиту воспользовавшись нашим <a href="/">кредитным калькулятором</a>
             </p>
-            : <Link className="tabs-content__button button" to="/">
+            : <Link className="tabs-content__button" to="/">
               Узнать подробнее
             </Link>}
         </div>

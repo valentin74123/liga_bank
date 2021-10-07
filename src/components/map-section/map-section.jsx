@@ -2,6 +2,8 @@ import React from 'react';
 import {YMaps, GeolocationControl, Map, Placemark, ZoomControl} from 'react-yandex-maps';
 import {PINS} from '../../const';
 
+import "./style.scss";
+
 const MapSection = () => {
   return (
     <YMaps>

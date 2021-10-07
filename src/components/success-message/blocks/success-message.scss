@@ -1,0 +1,56 @@
+.success-message {
+  position: relative;
+  width: 500px;
+  padding: 54px;
+  text-align: center;
+  background-color: $light-white1;
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+  }
+}
+
+.success-message__title {
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 500;
+  color: $dark;
+
+  @include zero-margin();
+  margin-bottom: 14px;
+}
+
+.success-message__text {
+  font-size: 16px;
+  line-height: 1.4;
+  color: $dark-gray1;
+
+  @include zero-margin();
+}
+
+.success-message__button {
+  @include button-close(); 
+
+  top: 20px;
+  right: 20px;
+}
+
+@media (max-width: $mobile-width) {
+  .success-message {
+    padding: 34px 25px;
+  }
+
+  .success-message__title {
+    font-size: 18px;
+
+    width: 85%;
+    margin-bottom: 13px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .success-message__button {
+    top: 15px;
+    right: 15px;
+  }
+}

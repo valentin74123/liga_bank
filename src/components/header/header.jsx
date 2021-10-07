@@ -8,6 +8,8 @@ import {getViewport} from '../../store/page/selectors';
 import {setPopup} from '../../store/actions';
 import Logo from '../logo/logo';
 
+import "./style.scss";
+
 const Header = (props) => {
   const {currentPage} = props;
 
@@ -69,7 +71,7 @@ const Header = (props) => {
 
         <div className="header__container">
           <nav className="header__nav navigation">
-            <ul className="navigation__list list">
+            <ul className="navigation__list">
               {HEADER_LINKS.map(({link, title}) => (
                 <li key={link} className="navigation__item">
                   {(currentPage.title === title)

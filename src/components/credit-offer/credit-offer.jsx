@@ -7,6 +7,8 @@ import {getCreditType, getValidityStatus, selectIsValidLoanSum, selectLoanSum,
   selectMinIncome, selectMonthlyPayment, selectPercentRate} from '../../store/credit/selectors';
 import {getFormStep} from '../../store/page/selectors';
 
+import "./style.scss";
+
 const typeToText = {
   [CreditType.AUTO]: `автокредита`,
   [CreditType.HOME]: `ипотеки`,
@@ -79,7 +81,7 @@ const CreditOffer = () => {
           </div>
         </dl>
 
-        <button onClick={onButtonClick} className="credit-offer__button button" type="button" disabled={isDisabled}>
+        <button onClick={onButtonClick} className="credit-offer__button" type="button" disabled={isDisabled}>
           Оформить заявку
         </button>
       </>

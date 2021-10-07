@@ -7,6 +7,8 @@ import CreditParameters from '../credit-parameters/credit-parameters';
 import CreditOffer from '../credit-offer/credit-offer';
 import RequestForm from '../request-form/request-form';
 
+import "./style.scss";
+
 const CreditCalculator = () => {
   const step = useSelector(getFormStep);
   const isStepTwoShown = step > 1;

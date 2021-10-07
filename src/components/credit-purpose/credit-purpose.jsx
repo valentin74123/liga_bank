@@ -6,6 +6,8 @@ import {getClassName} from '../../utils';
 import {resetOptions, setCreditType, setInitialPayment, setInitialPaymentRate, setPeriod, setTotalPrice, setStep} from '../../store/actions';
 import {getCreditType} from '../../store/credit/selectors';
 
+import "./style.scss";
+
 const CreditToTitle = {
   home: `Ипотечное кредитование`,
   auto: `Автомобильное кредитование`,
@@ -97,7 +99,7 @@ const CreditPurpose = (props) => {
         </svg>
       </span>
 
-      <ul className="credit-purpose__options list">
+      <ul className="credit-purpose__options">
         {types.map((type) => (
           <li
             key={type}

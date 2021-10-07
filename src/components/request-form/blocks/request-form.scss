@@ -1,0 +1,165 @@
+.request-form {
+  width: 770px;
+  margin: 0 auto 96px;
+  padding: 43px 70px 70px 70px;
+  text-align: center;
+  background-color: $light-white1;
+
+  &--shake {
+    animation: shake 0.6s;
+  }
+}
+
+.request-form__title {
+  margin-bottom: 13px;
+}
+
+.request-form__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0 12px;
+  border-bottom: 1px solid $light-gray2;
+
+  label {
+    font-size: 16px;
+    line-height: 1.4;
+    color: $dark-gray1;
+  }
+
+  input {
+    font: inherit;
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: 500;
+    color: $dark;
+    text-align: right;
+
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor: default;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.request-form__wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 29px;
+}
+
+.request-form__field {
+  margin-bottom: 30px;
+
+  &--user {
+    width: 100%;
+  }
+
+  &--contact {
+    width: 300px;
+  }
+
+  input {
+    font: inherit;
+    font-size: 18px;
+    line-height: 1.4;
+    color: $dark;
+    letter-spacing: 0.03em;
+
+    width: 100%;
+    padding: 18px 24px 15px;
+
+    background-color: transparent;
+    border: 1px solid $black;
+    border-radius: 4px;
+
+    &::placeholder {
+      color: $gray;
+    }
+  }
+}
+
+.request-form__button {
+  @include basik-button();
+
+  min-width: 198px;
+
+  @include button();
+
+  margin: 10px auto 0;
+}
+
+@media (max-width: $tablet-width) {
+  .request-form {
+    width: 100%;
+    padding: 36px 0 35px;
+    margin-bottom: 0;
+    text-align: center;
+    background-color: $white;
+  }
+
+  .request-form__title {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 29px;
+  }
+
+  .request-form__field--contact {
+    width: 47.8%;
+  }
+
+  .request-form__button {
+    width: 100%;
+    margin-top: 11px;
+    padding: 14px 30px 15px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .request-form {
+    padding: 0;
+    margin-bottom: 54px;
+  }
+
+  .request-form__title {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .request-form__item {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding: 14px 0 13px 0;
+
+    input {
+      font-size: 18px;
+      text-align: left;
+    }
+  }
+
+  .request-form__wrapper {
+    padding-top: 32px;
+  }
+
+  .request-form__field {
+    margin-bottom: 20px;
+
+    &--contact {
+      width: 100%;
+    }
+
+    input {
+      font-size: 16px;
+      padding: 19px 15px 17px;
+    }
+  }
+
+  .request-form__button {
+    padding: 17px 30px 15px;
+  }
+}
