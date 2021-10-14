@@ -27,7 +27,7 @@
   font-weight: 500;
 
   @include zero-margin();
-  margin-bottom: 25px;
+  margin-bottom: 27px;
   max-width: 410px;
 }
 
@@ -58,7 +58,7 @@
   font-weight: normal;
 
   width: 400px;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .tabs-content__item {
@@ -125,7 +125,7 @@
     font-size: 16px;
 
     max-width: 100%;
-    margin-bottom: 11px;
+    margin-bottom: 15px;
   }
 
   .tabs-content__item {
@@ -205,6 +205,7 @@
     height: 113px;
     overflow: hidden;
     justify-content: flex-start;
+    background-color: inherit;
 
     img {
       object-fit: contain;
@@ -216,8 +217,7 @@
 
     min-width: 240px;
     max-width: 330px;
-    width: 74%;
-    margin-bottom: 12px;
+    width: 72%;
   }
 
   .tabs-content__item {
@@ -225,7 +225,7 @@
     padding-bottom: 12px;
 
     &::before {
-      top: 2px;
+      top: 5px;
       width: 10px;
     }
   }

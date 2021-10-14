@@ -11,7 +11,10 @@
 }
 
 .request-form__title {
-  margin-bottom: 13px;
+  font-size: 22px;
+  line-height: 140%;
+
+  margin-bottom: 12px;
 }
 
 .request-form__item {
@@ -106,7 +109,7 @@
   .request-form__title {
     font-weight: 500;
     font-size: 18px;
-    margin-bottom: 29px;
+    margin-bottom: 27px;
   }
 
   .request-form__field--contact {
@@ -128,13 +131,14 @@
 
   .request-form__title {
     font-size: 16px;
+    line-height: normal;
     margin-bottom: 20px;
   }
 
   .request-form__item {
     flex-direction: column-reverse;
     align-items: flex-start;
-    padding: 14px 0 13px 0;
+    padding: 14px 0 14px 0;
 
     input {
       font-size: 18px;
@@ -143,7 +147,7 @@
   }
 
   .request-form__wrapper {
-    padding-top: 32px;
+    padding-top: 30px;
   }
 
   .request-form__field {

@@ -25,7 +25,7 @@ const TabsSection = () => {
       <section className="tabs-section">
         <div className="tabs-section__container">
           {isDesktop &&
-            <TabsElements activeTab={activeTab} onClick={onTabClick} viewportType={Viewport.DESKTOP} />
+            <TabsElements activeTab={activeTab} onFocus={onTabClick} onClick={onTabClick} viewportType={Viewport.DESKTOP} />
           }
         </div>
       </section>

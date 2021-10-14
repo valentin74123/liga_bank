@@ -39,7 +39,7 @@
 @media (max-width: $tablet-width) {
   .credit-calculator__title {
     font-size: 32px;
-    margin-bottom: 29px;
+    margin-bottom: 30px;
   }
 
   .credit-calculator__step {
@@ -62,9 +62,13 @@
 }
 
 @media (max-width: $mobile-width) {
+  .credit-calculator__wrapper {
+    padding: 0 15px;
+  }
+
   .credit-calculator__title {
     font-size: 22px;
-    margin-bottom: 22px;
+    margin-bottom: 23px;
   }
 
   .credit-calculator__offer {

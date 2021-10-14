@@ -46,12 +46,20 @@ const CreditPriceField = (props) => {
     evt.preventDefault();
     const newValue = decrementPrice();
     doOnPriceChange(newValue);
+
+    if (currentPrice > max) {
+      doOnPriceChange(max);
+    }
   }, [decrementPrice, doOnPriceChange]);
 
   const handlePlusClick = useCallback((evt) => {
     evt.preventDefault();
     const newValue = incrementPrice();
     doOnPriceChange(newValue);
+
+    if (currentPrice < min) {
+      doOnPriceChange(min);
+    }
   }, [incrementPrice, doOnPriceChange]);
 
   return (
@@ -73,15 +81,17 @@ const CreditPriceField = (props) => {
           </svg>
         </button>
 
-        <NumberFormat
-          id="price"
-          type="text"
-          name="price"
-          onChange={handlePriceChange}
-          value={currentPrice}
-          thousandSeparator=" "
-        />
-        <span className="credit-price-field__units">рублей</span>
+        <div className="credit-price-field__w">
+          <NumberFormat
+            id="price"
+            type="text"
+            name="price"
+            onChange={handlePriceChange}
+            value={currentPrice}
+            thousandSeparator=" "
+          />
+          <span className="credit-price-field__units">рублей</span>
+        </div>
         <span className="credit-price-field__error">некорректное значение</span>
 
         <button

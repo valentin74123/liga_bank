@@ -1,6 +1,6 @@
 .slider {
   position: relative;
-  width: 100%;
+  width: 98.5vw;
   height: 400px;
   margin-left: auto;
   margin-right: auto;
@@ -9,16 +9,18 @@
   z-index: 0;
 
   @media (max-width: $tablet-width) {
+    width: 98.1vw;
     height: 300px;
     margin-bottom: 0;
   }
 
   @media (max-width: $mobile-width) {
+    width: 97vw;
     height: 226px;
   }
 
   .swiper-pagination-bullets {
-    bottom: 32px;
+    bottom: 33px;
 
     @media (max-width: $tablet-width) {
       bottom: 10px;

@@ -47,6 +47,7 @@
     font-weight: normal;
 
     @include zero-margin();
+    margin-top: 3px;
   }
 
   dt {
@@ -90,12 +91,14 @@
 
 @media (max-width: $mobile-width) {
   .credit-offer {
-    padding: 34px 14px 40px;
+    padding: 35px 14px 40px;
     margin-bottom: 44px;
   }
 
   .credit-offer__title {
     font-size: 18px;
+
+    margin-bottom: 24px;
   }
 
   .credit-offer__details {
@@ -107,12 +110,16 @@
       font-size: 18px;
       padding-bottom: 0;
     }
+
+    dd {
+      margin-top: 1px;
+    }
   }
 
   .credit-offer__item:nth-child(3),
   .credit-offer__item:nth-child(4) {
     dd {
-      margin-top: 0;
+      margin-top: 1px;
     }
   }
 

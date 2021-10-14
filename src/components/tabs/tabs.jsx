@@ -6,7 +6,7 @@ import {TabType, TabTypeToData} from '../../const';
 import "./style.scss";
 
 const Tabs = (props) => {
-  const {activeTab, onClick} = props;
+  const {activeTab, onFocus, onClick} = props;
 
   const TABS = Object.values(TabType);
 
@@ -18,6 +18,7 @@ const Tabs = (props) => {
         return (
           <li
             onClick={onClick}
+            onFocus={onFocus}
             key={type}
             id={type}
             className={
@@ -41,6 +42,7 @@ const Tabs = (props) => {
 
 Tabs.propTypes = {
   activeTab: PropTypes.string.isRequired,
+  onFocus: PropTypes.func.isRequired,
   onClick: PropTypes.func.isRequired,
 };
 

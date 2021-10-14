@@ -65,7 +65,7 @@
 .slide__wrapper {
   @include container();
 
-  padding: 103px 218px;
+  padding: 103px 268px;
 }
 
 .slide__title {
@@ -74,7 +74,7 @@
   font-weight: bold;
 
   @include zero-margin();
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   max-width: 70%;
 }
 
@@ -85,7 +85,7 @@
   color: $light-white3;
 
   @include zero-margin();
-  margin-bottom: 38px;
+  margin-bottom: 36px;
   max-width: 50%;
 }
 
@@ -194,6 +194,7 @@
 
   .slide__title {
     font-size: 38px;
+    margin-bottom: 6px;
   }
 
   .slide__text {

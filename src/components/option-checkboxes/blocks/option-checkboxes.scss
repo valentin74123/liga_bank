@@ -37,4 +37,8 @@ input:checked + .option-checkboxes__label .option-checkboxes__box {
   .option-checkboxes {
     font-size: 14px;
   }
+
+  .option-checkboxes__box {
+    margin-top: 1px;
+  }
 }

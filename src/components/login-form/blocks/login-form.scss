@@ -90,7 +90,9 @@
 
 @media (max-width: $tablet-width) {
   .login-form {
-    width: 100%;
+    width: 85%;
+    border: 4px solid $blue1;
+    box-sizing: border-box;
     padding-left: 88px;
     padding-right: 88px;
   }
@@ -102,6 +104,7 @@
 
 @media (max-width: $mobile-width) {
   .login-form {
+    width: 100%;
     padding: 50px 20px;
   }
 

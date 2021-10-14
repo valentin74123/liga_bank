@@ -5,15 +5,13 @@
   flex-wrap: wrap;
   align-items: center;
   margin-top: 12px;
+  column-gap: 15px;
 }
 
 .social__item {
-  margin-right: 15px;
   margin-bottom: 15px;
-
-  &:nth-child(4n) {
-    margin-right: 0;
-  }
+  width: 16px;
+  text-align: center;
 }
 
 .social__link {
@@ -25,10 +23,7 @@
 @media (max-width: $tablet-width) {
   .social__list {
     justify-content: flex-start;
-  }
-
-  .social__item,
-  .social__item:nth-child(4n) {
-    margin-right: 20px;
+    column-gap: 20px;
+    margin-left: -5px;
   }
 }

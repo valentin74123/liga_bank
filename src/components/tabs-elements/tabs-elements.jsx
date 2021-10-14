@@ -4,11 +4,11 @@ import Tabs from '../tabs/tabs';
 import TabContent from '../tab-content/tab-content';
 
 const TabsElements = (props) => {
-  const {activeTab, onClick, viewportType} = props;
+  const {activeTab, onFocus, onClick, viewportType} = props;
 
   return (
     <Fragment>
-      <Tabs activeTab={activeTab} onClick={onClick} />
+      <Tabs activeTab={activeTab} onFocus={onFocus} onClick={onClick} />
 
       <TabContent tabName={activeTab} viewportType={viewportType} />
     </Fragment>
@@ -17,6 +17,7 @@ const TabsElements = (props) => {
 
 TabsElements.propTypes = {
   activeTab: PropTypes.string.isRequired,
+  onFocus: PropTypes.func.isRequired,
   onClick: PropTypes.func.isRequired,
   viewportType: PropTypes.string.isRequired,
 };
