@@ -159,8 +159,18 @@
     }
   }
 
-  .credit-price-field__button {
+  .credit-price-field__button--minus {
     margin-left: 8px;
+    margin-right: auto;
+  }
+
+  .credit-price-field__button--minus {
+    margin-left: 8px;
+    margin-right: auto;
+  }
+
+  .credit-price-field__button--plus {
+    margin-left: auto;
   }
 
   .credit-price-field__w {
