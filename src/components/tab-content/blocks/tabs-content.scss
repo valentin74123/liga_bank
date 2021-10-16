@@ -195,7 +195,7 @@
 
     max-width: 370px;
     width: 75%;
-    margin-bottom: 19px;
+    margin-bottom: 20px;
   }
 
   .tabs-content__image {
@@ -219,6 +219,7 @@
     min-width: 240px;
     max-width: 330px;
     width: 72%;
+    margin-bottom: 14px;
   }
 
   .tabs-content__item {
@@ -226,7 +227,6 @@
     padding-bottom: 12px;
 
     &::before {
-      top: 5px;
       width: 10px;
     }
   }
