@@ -130,11 +130,21 @@
       .credit-price-field__label {
         margin-bottom: 10px;
       }
+
+      .credit-price-field__wrapper {
+        input {
+          margin-left: -16px;
+        }
+      }
     }
   }
 
   .credit-price-field__wrapper {
     font-size: 16px;
+  }
+
+  .credit-price-field__w {
+    margin-left: -30px;
   }
 }
 
