@@ -13,15 +13,27 @@
     padding-right: 5px;
   }
 
+  &:nth-child(1) {
+    .credit-price-field__wrapper {
+      padding-top: 0;
+    }
+  }
+
   &:nth-child(3) {
     .credit-price-field__label {
       margin-bottom: 8px;
+    }
+
+    .credit-price-field__wrapper {
+      input {
+        margin-left: -20px;
+      }
     }
   }
 }
 
 .credit-price-field__w {
-  margin: 0 auto;
+  margin-left: -20px;
 }
 
 .credit-price-field--invalid {
