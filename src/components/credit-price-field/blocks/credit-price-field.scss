@@ -20,6 +20,14 @@
   }
 
   &:nth-child(3) {
+    .credit-price-field__wrapper {
+      input {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  &:nth-child(3) {
     .credit-price-field__label {
       margin-bottom: 8px;
     }
