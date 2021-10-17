@@ -52,10 +52,22 @@ const HEADER_LINKS = [Navigation.SERVICES, Navigation.CREDIT, Navigation.CURRENC
 const FOOTER_LINKS = [Navigation.SERVICES, Navigation.CREDIT, Navigation.CONTACTS, Navigation.QUESTION];
 
 const TabType = {
-  DEPOSIT: `deposit`,
-  CREDIT: `credit`,
-  INSURANCE: `insurance`,
-  SERVICES: `services`,
+  DEPOSIT: {
+    type: `deposit`,
+    tabIndex: 1,
+  },
+  CREDIT: {
+    type: `credit`,
+    tabIndex: 2,
+  },
+  INSURANCE: {
+    type: `insurance`,
+    tabIndex: 3,
+  },
+  SERVICES: {
+    type: `services`,
+    tabIndex: 4,
+  },
 };
 
 const TabTypeToData = {

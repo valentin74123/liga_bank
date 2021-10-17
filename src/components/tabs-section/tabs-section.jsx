@@ -9,7 +9,7 @@ import "./style.scss";
 
 const TabsSection = () => {
   const viewportType = useSelector(getViewport);
-  const [activeTab, setActiveTab] = useState(TabType.DEPOSIT);
+  const [activeTab, setActiveTab] = useState(TabType.DEPOSIT.type);
 
   const onTabClick = useCallback((evt) => {
     const newTab = evt.currentTarget.id;

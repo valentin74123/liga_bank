@@ -19,9 +19,9 @@ const TabsSlider = (props) => {
       pagination={{clickable: true}}
       className="tabs-slider"
     >
-      {services.map((type) => (
-        <SwiperSlide key={type}>
-          <TabContent tabName={type} viewportType={viewportType}/>
+      {services.map((tab) => (
+        <SwiperSlide key={tab.type}>
+          <TabContent tabName={tab.type} viewportType={viewportType}/>
         </SwiperSlide>
       ))}
     </Swiper>

@@ -12,21 +12,22 @@ const Tabs = (props) => {
 
   return (
     <ul className="tabs">
-      {TABS.map((type) => {
-        const {imgId, title} = TabTypeToData[type];
-        const isActive = type === activeTab;
+      {TABS.map((tab) => {
+        const {imgId, title} = TabTypeToData[tab.type];
+        const isActive = tab.type === activeTab;
+
         return (
           <li
             onClick={onClick}
             onFocus={onFocus}
-            key={type}
-            id={type}
+            key={tab.type}
+            id={tab.type}
             className={
               getClassName(`tabs__item`,
-                  `tabs__item--${type}`,
+                  `tabs__item--${tab.type}`,
                   isActive && `tabs__item--active`)
             }
-            tabIndex={0}
+            tabIndex={tab.tabIndex}
           >
             <svg className="tabs__icon" width="34" height="30">
               <use xlinkHref={imgId}></use>

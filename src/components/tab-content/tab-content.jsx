@@ -36,7 +36,21 @@ const TabContent = (props) => {
 
   const className = useMemo(() => getClassName(`tabs-content`, `tabs-content--${tabName}`), [tabName]);
 
-  const isCreditTab = tabName === TabType.CREDIT;
+  const isCreditTab = tabName === TabType.CREDIT.type;
+
+  let tabIndex;
+
+  if (tabName === TabType.DEPOSIT.type) {
+    tabIndex = 1;
+  }
+
+  if (tabName === TabType.INSURANCE.type) {
+    tabIndex = 3;
+  }
+
+  if (tabName === TabType.SERVICES.type) {
+    tabIndex = 4;
+  }
 
   const {width, height} = getImgSize(viewportType);
 
@@ -56,9 +70,9 @@ const TabContent = (props) => {
 
           {isCreditTab ?
             <p className="tabs-content__credit-info">
-              Рассчитайте ежемесячный платеж и&nbsp;ставку&nbsp;по кредиту воспользовавшись нашим <a href="/">кредитным калькулятором</a>
+              Рассчитайте ежемесячный платеж и&nbsp;ставку&nbsp;по кредиту воспользовавшись нашим <a tabIndex={2} href="/">кредитным калькулятором</a>
             </p>
-            : <Link className="tabs-content__button" to="/">
+            : <Link tabIndex={tabIndex} className="tabs-content__button" to="/">
               Узнать подробнее
             </Link>}
         </div>

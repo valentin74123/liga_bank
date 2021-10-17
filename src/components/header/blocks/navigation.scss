@@ -4,12 +4,17 @@
   margin-top: 7px;
   display: flex;
   flex-wrap: wrap;
-  column-gap: 23px;
+  // column-gap: 23px;
   max-width: 500px;
 }
 
 .navigation__item {
   padding-bottom: 15px;
+  margin-right: 23px;
+
+  &:nth-child(n+4) {
+    margin-right: 0;
+  }
 }
 
 .navigation__link {
@@ -32,7 +37,11 @@
 @media (max-width: $tablet-width) {
   .navigation__list {
     margin-top: 0;
-    column-gap: 20px;
+    // column-gap: 20px;
+  }
+
+  .navigation__item {
+    margin-right: 20px;
   }
 }
 
