@@ -18,13 +18,26 @@
   }
 
   .input-range__label--value {
-    top: 0.6rem;
+    top: 12px;
+    left: 7px;
   }
 }
 
 .range--period {
   .input-range__label--value {
     display: none;
+  }
+
+  .input-range__label {
+    bottom: -18px;
+  }
+
+  .input-range__label--min {
+    left: 9px;
+  }
+
+  .input-range__label--max {
+    right: 15px;
   }
 }
 
@@ -45,6 +58,6 @@
 
 @media (max-width: $mobile-width) {
   .range {
-    margin: 15px auto 11px;
+    margin: 12px auto 14px;
   }
 }
