@@ -13,18 +13,18 @@ import MapSection from "../map-section/map-section";
 import Footer from "../footer/footer";
 import Popup from "../popup/popup";
 
-const viewport = useSelector(getViewport);
-
-const dispatch = useDispatch();
-
-const changeDevice = useCallback(() => {
-  const newViewport = defineViewportWidth();
-  if (newViewport !== viewport) {
-    dispatch(setViewport(newViewport));
-  }
-}, [dispatch, viewport]);
-
 const CalculateLoanScreen = () => {
+  const viewport = useSelector(getViewport);
+
+  const dispatch = useDispatch();
+
+  const changeDevice = useCallback(() => {
+    const newViewport = defineViewportWidth();
+    if (newViewport !== viewport) {
+      dispatch(setViewport(newViewport));
+    }
+  }, [dispatch, viewport]);
+
   useEffect(() => {
     window.addEventListener(`resize`, changeDevice);
     return () => {
