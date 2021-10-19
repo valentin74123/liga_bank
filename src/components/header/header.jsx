@@ -18,6 +18,8 @@ const Header = (props) => {
 
   const isMobile = viewportType === Viewport.MOBILE;
 
+  const isHeader = true;
+
   const closeMenu = useCallback(() => {
     setIsMenuOpen(false);
     document.body.classList.remove(`page--lock`);
@@ -60,7 +62,7 @@ const Header = (props) => {
   return (
     <header className={headerClassName}>
       <div className="header__wrapper">
-        <Logo className="header__logo" isMobile={isMobile} />
+        <Logo className="header__logo" isMobile={isMobile} isHeader={isHeader} />
         <button onClick={openMenu} className="header__button header__button--open" isabled={isMenuOpen}>
           Открыть меню
         </button>
@@ -76,7 +78,7 @@ const Header = (props) => {
                 <li key={link} className="navigation__item">
                   {(currentPage.title === title)
                     ? <span className="navigation__link navigation__link--current">{title}</span>
-                    : <Link to={link} className="navigation__link">{title}</Link>}
+                    : <Link tabIndex="1" to={link} className="navigation__link">{title}</Link>}
                 </li>
               ))}
             </ul>
@@ -84,7 +86,7 @@ const Header = (props) => {
 
           <div className="header__user-nav user-nav">
             <div className="user-nav__wrapper">
-              <button onClick={handleLoginClick} className="user-nav__link" type="button" aria-label="Войти в Интернет-банк">
+              <button tabIndex="1" onClick={handleLoginClick} className="user-nav__link" type="button" aria-label="Войти в Интернет-банк">
                 <svg className="user-nav__icon" width="20" height="22">
                   <use xlinkHref="#login"></use>
                 </svg>
