@@ -164,7 +164,8 @@
     background-position: calc(50% + 50px);
 
     &--1 {
-      background-position: calc(50% + 105px) bottom;
+      background-size: 747px 280px, 100%;
+      background-position: calc(50% + 90px) -45px;
 
       .slide__text {
         max-width: 70%;
